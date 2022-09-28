@@ -1,4 +1,5 @@
 
+import React from "react";
 function Header({text,bgcolor, color}){
 
     const headerStyles = {
