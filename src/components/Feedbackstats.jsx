@@ -1,9 +1,11 @@
+import React from "react";
+
 function Feedbackstats ({ feedback }){
-  
    let average = feedback.reduce((acc,curr) => {
      return acc + curr.rating
    },0) /  feedback.length
 
+   //convert the result of average to whole number
    average = average.toFixed(1).replace(/[.,]0$/, '')
 
     return (
