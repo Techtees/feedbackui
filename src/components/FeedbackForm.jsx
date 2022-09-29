@@ -1,13 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Card from "./shared/Card"
 import Button from './shared/Button'
 import SelectRating from './SelectRating'
+import FeedBackContext from '../context/FeedBackContext'
 
-function FeedbackForm ({handleAdd}){
+function FeedbackForm(){
     const [text, setText] = useState('')
     const [rating , setRating] = useState(3)
     const [btnDisable, setbtnDisable ] = useState(true) // disable button before numbers of characters is entered 
     const [message, setMessage ] = useState('') // mesage state 
+
+    //context passed
+    const {addFeedback, editFeedback} = useContext(FeedBackContext)
 
     const handleChange = (e) => {
         
@@ -23,7 +27,6 @@ function FeedbackForm ({handleAdd}){
             setMessage(null)
             setbtnDisable(false)
         }
-
         setText(e.target.value)
     }
 
@@ -31,13 +34,13 @@ function FeedbackForm ({handleAdd}){
         e.preventDefault()
 
         if (text.trim().length > 10) {
-            const newFeedback1 = {
+            const newFeedback = {
                 text,
                 rating,
             }
             // console.log(newFeedback);
 
-            handleAdd(newFeedback1)
+            addFeedback(newFeedback)
             setText('')
         }
         
