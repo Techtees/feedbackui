@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useState} from 'react'
-import { v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 const FeedBackContext = createContext();
 
@@ -26,6 +26,7 @@ export const FeedBackProvider = ({children}) => {
 
     const deleteFeedback = (id) => {
         if(window.confirm('are sure you want to delete')){
+            //filter out feedback item
           setFeedback(feedback.filter((item) => item.id !== id))
         }
     }
@@ -42,6 +43,7 @@ export const FeedBackProvider = ({children}) => {
             edit: true,
         })
      }
+     //update feedback item
      const updateFeedBack = (id,upItem) => {
         setFeedback(
             feedback.map((item) => (
