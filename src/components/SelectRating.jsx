@@ -13,45 +13,25 @@ function SelectRating ({select}) {
 
 
     const handleChange = (e) => {
-        setSelected(+e.currentTarget.value)
+        // setSelected(+e.currentTarget.value)
         select(+e.currentTarget.value)
 
     }
     return (
         <ul className="rating">
-            <li>
-                <input
-                   type="radio"
-                   id='num1'
-                   value= '1'
-                   name="rating"
-                   onChange={handleChange}
-                   checked= {selected === 1}
-                 />
-                <label htmlFor="num1">1</label>
-            </li>
-            <li>
-                <input
-                   type="radio"
-                   id='num2'
-                   value= '2'
-                   name="rating"
-                   onChange={handleChange}
-                   checked= {selected === 2}
-                 />
-                <label htmlFor="num2">2</label>
-            </li>
-            <li>
-                <input
-                   type="radio"
-                   id='num3'
-                   value= '3'
-                   name="rating"
-                   onChange={handleChange}
-                   checked= {selected === 3}
-                 />
-                <label htmlFor="num3">3</label>
-            </li>
+            {Array.from({length:10}, (_,i) => (
+                <li key={`rating-${i+1}`}>
+                    <input
+                      type='radio'
+                      id = {`num${i + 1}`}
+                      value = {i +1}
+                      name ='rating'
+                      onChange={handleChange}
+                      checked = {selected === i +1} 
+                    />
+                    <label htmlFor={`num${i + 1}`}>{i + 1}</label>
+                </li>
+            ))}
         </ul>
       );
 }
