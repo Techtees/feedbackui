@@ -6,7 +6,7 @@ import FeedBackContext from '../context/FeedBackContext'
 
 function FeedbackForm(){
     const [text, setText] = useState('')
-    const [rating , setRating] = useState(3)
+    const [rating , setRating] = useState()
     const [btnDisable, setbtnDisable ] = useState(true) // disable button before numbers of characters is entered 
     const [message, setMessage ] = useState('') // mesage state 
 
