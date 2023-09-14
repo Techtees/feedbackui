@@ -16,18 +16,24 @@
       "text": "This is feedback item 3"
     },
     {
-      "id": 4
-    },
-    {
+      "text": "i need a macbook",
+      "rating": 1,
       "id": 5
     },
     {
+      "text": "okay this is nice",
+      "rating": 2,
       "id": 6
     },
     {
-      "id": "7",
-      "text": "This is feedback item 4",
-      "rating": "4"
+      "text": "okay this is the question",
+      "rating": 1,
+      "id": 7
+    },
+    {
+      "text": "i made mistakes",
+      "rating": 2,
+      "id": 8
     }
   ]
 }
