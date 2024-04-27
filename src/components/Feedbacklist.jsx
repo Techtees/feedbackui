@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types'
 import Feedbackitem from "./Feedbackitem"
 import Spinner from "./shared/Loader";
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import {useContext} from 'react'
 import FeedBackContext from "../context/FeedBackContext";
 
